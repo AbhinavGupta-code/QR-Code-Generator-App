@@ -1,0 +1,118 @@
+:root {
+  --bg-color: #112d02;
+  --primary-color: #fafafa;
+  --btn-color: #000000;
+  --btn-hover: #333333;
+  --green-light: #33e233;
+  --font: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: var(--font);
+  color: var(--btn-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+canvas {
+  border: 2px solid var(--green-light);
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  display: none;
+  margin: 1rem 0;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--btn-color);
+  border-radius: 0.25rem;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--btn-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fafafa;
+}
+
+body.dark main {
+  background-color: #222;
+}
+
+body.dark button {
+  background-color: #fafafa;
+  color: #000;
+}
+
+@media (min-width: 30rem) {
+  main {
+    height: min-content;
+    border-radius: 1rem;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+
+  .btn-group {
+    flex-direction: row;
+  }
+}
